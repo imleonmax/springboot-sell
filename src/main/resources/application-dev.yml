@@ -1,0 +1,42 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://192.168.1.125:3306/sell?characterEncoding=utf-8&useSSL=false
+  jpa:
+    show-sql: true
+  jackson:
+    default-property-inclusion: non_null
+  redis:
+    host: 192.168.1.125
+    port: 6379
+server:
+  context-path: /sell
+wechat:
+  # 公众账号（授权）
+  mpAppId: wx4ee980********89
+  mpAppSecret: e2939f352a86805e20********09181d
+  # 开放平台,卖家扫码登陆
+  openAppId: wx6ad144e54af67d87
+  openAppSecret: 91a2ff6d38a2bbc********079108e2e
+  templateId:
+    orderStatus: p-b5LPziSMukAE8QJAtAEGCGWG********weXCDbjKI
+  # 支付/商户号
+  mchId: 1483469312
+  mchKey: 098F6BCD4621D373********2627B4F6
+  # 发起支付不需要证书，退款需要
+  keyPath: C:/h5.p12
+  # 异步通知
+  notifyUrl: http://lxy123.natapp1.cc/sell/pay/notify
+
+
+projectUrl:
+  wechatMpAuthorize: http://lxy123.natapp1.cc
+  wechatOpenAuthorize: http://lxy123.natapp1.cc
+  sell: http://lxy123.natapp1.cc
+logging:
+  level:
+    cn.imlxy.entity.mapper: trace
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
